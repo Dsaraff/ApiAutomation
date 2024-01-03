@@ -1,0 +1,34 @@
+package kicchinapp;
+
+import org.testng.annotations.Test;
+
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+
+public class Get_menusofspecificaccount_specificdate {
+@Test
+public void specificdatemenu() {
+	
+	String clientID = "CBC8B951-512C-4C43-B336-039031E080D9";
+	String Auth = "eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJBOUQ4NDY2Ni1DMUQ3LTRGNkItQjQ3Mi01M0Y3OTlFMjg0MEQiLCJpc3MiOiJDTE9VRCIsInN1YiI6IjJCeXJYN2Y3d1hpcXZXcmp0YmZDRkp6aDI5dnloVzVFRjdpQWlUOUdlWnk0aitTK2dlRUltMTFSSlFDejRuamZ5Q3d3YkFMTmxHMVNBRGJlTEl1aWdkVDNkZGlZV2xFd2FSNGg3Z09iTXVtWjl6Rkp6RWNid0M1Vnd6TkRVdDJjT0dNQ0pPR1ovWmhiNWVFaUcrNnk4WmRkbE5sYzgyL0ZvVmlpUDJ4OFBCZ0ZvZ2FTNnl3M09TOXN1N0cyaWgzcVc5OVdIVEFNWWNERWJUVVhjMTNkZS9UNW9QdWc5Z00xRDByUlEwWUhGWFRJcXQ2RUZSU1BPUWdna245VVdRQ0w1Q2p0eTRDZnRyYVJOSzRKdktqOVNES0R2cklabFFLT1ZtSGdSNkM3eGpmcVNsdXVyMmx6TjVpS1J1dnZ1QSsyY210NzZMTDh5TzNzV3NTTHRuelZqby90bi9pcy9xWjdUOFQ4MDZPR0Rzc2FKY2pqTXJ5T0s3UnNZNWtNdmc1Wi91MGtJUTBucnV1M1RJVjdyWE9Ub1hTdGJkeUMxVEZDKzhvOG95dnFJVkRSRjh0ajRla3FLMTAwbHpzTWxjOUVKZk1KRVphT0xXUEtidEdwdWxITk5kNHZGQUljV25kdlpaMUVJUFBmdHBiZDhjTVRBNmtDZTRwbkdkUGNLWlNxbnBsTElyRFYvL3pYQzlhV1o2Tm81a0VUd1pLQXhUMkluemVDcWtSWldiU1gwb0FUVWZzZm1iWFk5ZkkyODgzWENUMU5EOVU0VGJHNG9IYzFDdGtjRDhJNlZVVGxJVFo1UHFGQzAwVnFpbTloQTQ5Vmp1MVBsYWtLY1JGWngwYkFSQjk4M1ZmbGNZTWJENFRFV2xyUjVtazRiTWVrK3A4WGJKWENtZ3Q0d2lnL05BUk43MDVRaGpCcTJZMFpzNkFhZzk4a3Q3UXhFN3h6UGNWbWtzL05KVTdGU01wS3lwcWtldklUd0FrR3FYNGdKQjZNbU0rOVlVOTVSbkRLVDVuelczUnV5OG9zVmhtaDQ1WkVQdkIrOWczWEkzczJ3L1NKbCtmWU4zTGd6Q3p1UGdydnNHZmtsTzUxVXRDNmJzdzhwK00wcDNFRzFqRGdmTmh6T0JVZ2M5dmZLQXhkY3dwSjcrdGo2anZDL0RJVFArcGNtWHBaV3dCRnJuM1hSTGZ2ZHhMZXNmQzhhRkxLVmMySm9CZW02S25GTEpIaGNPYlFDM3VHTnZQVDRGND0iLCJpYXQiOjE3MDQxNTI2MTcsImV4cCI6MTcwNDIzOTAxNn0.dWnMQQcRPsdEvAftjsWkAJJbiU7PkMYc6JzZSgE1RzqaGpALtox3XAUmlk5Q5m4TCT3DOLo8emw8wcJ_lXxoWA";
+	
+	RequestSpecification request = RestAssured.given();
+	request.header("ContentType","Application/json");
+	request.header("Authorization","Bearer "+Auth);
+	request.header("X-Cloud-Client-Type-Id",clientID);
+	
+	Response responseresult = request.get("https://api.kicchin.com/service-provider-service/rest/serviceproviders/814CDACB-BC4F-4B28-B12C-ABFCB7DCCA6A/v2/menuorders?menuDate=1704096000000");
+	String responsebody = responseresult.getBody().asString();
+	int StatusCode = responseresult.getStatusCode();
+	
+	System.out.println("body is" + responsebody);
+	System.out.println("StatusCode is" + StatusCode);
+	
+	
+	
+}
+	
+	
+	
+}

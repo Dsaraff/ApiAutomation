@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="cook_app.Account_Creation_test">
+      <class name="kicchinapp.Del_productdelete">
         <methods>
-          <include name="CreateAccount"/>
+          <include name="del_product"/>
         </methods>
-      </class> <!-- cook_app.Account_Creation_test -->
+      </class> <!-- kicchinapp.Del_productdelete -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
